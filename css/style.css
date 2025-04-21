@@ -1,50 +1,106 @@
+/* Importation des styles spécifiques à la page photographe */
 @import url("photographer.css");
 
-body {
-    font-family: "DM Sans", sans-serif;
-    margin: 0;
+/* Définition des couleurs principales du thème */
+:root {
+    --primary: #901C1C;
+    --secondary: #D3573C;
+    --gray: #757575;
 }
 
+/* Style général du body */
+body {
+    font-family: "DM Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
 
+/* Style du header global */
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 90px;
+    padding: 0 100px;
 }
 
+/* Style du titre principal */
 h1 {
-    color: #901C1C;
-    margin-right: 100px;
+    color: var(--primary);
 }
 
+/* Logo Fisheye */
 .logo {
     height: 50px;
-    margin-left: 100px;
 }
 
+/* Section contenant les cartes photographes */
 .photographer_section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 70px;
-    margin-top: 100px;
+    margin: 60px 100px;
 }
 
+/* Carte de photographe */
 .photographer_section article {
     justify-self: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-decoration: none;
 }
 
+/* Nom du photographe */
 .photographer_section article h2 {
-    color: #D3573C;
+    color: var(--secondary);
     font-size: 36px;
+    font-weight: 400;
 }
 
+/* Portrait du photographe */
 .photographer_section article img {
     height: 200px;
     width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Informations de base */
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+/* Informations additionnelles */
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.photographer_section article .country {
+    color: var(--primary);
+    font-size: 16px;
+}
+
+.photographer_section .tagline {
+    font-size: 14px;
+    font-weight: 900;
+    color: #525252;
+}
+
+.photographer_section article .price {
+    color: var(--gray);
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 3px;
 }
